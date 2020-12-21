@@ -61,10 +61,25 @@
 pipeline {
     agent any
     stages {
-        stage('build') {
-            steps {
-                sh 'ruby --version'
-            }
-        }
+           stage('requirements') {
+             steps {
+               echo 'Installing Bundler ....'
+               sh 'gem install bundler'
+             }
+           }
+
+           stage('build') {
+             steps {
+               echo 'Building project ....'
+               sh 'bundle install'
+             }
+           }
+
+           stage('test') {
+             steps {
+               echo 'Testing project ....'
+               sh 'rake cucumber:mailjet_api'
+             }
+           }
     }
 }
