@@ -15,18 +15,21 @@ pipeline {
                 bat "rake"
              }
         }
-         stage('Publish') {
+        stage('Publish') {
+               steps{
                 echo 'PUBLISHING Allure report'
-                publishHTML(
-                        target: [
-                                allowMissing         : false,
-                                alwaysLinkToLastBuild: false,
-                                keepAll              : true,
-                                reportDir            : 'report/allure-results',
-                                reportFiles          : 'index.html',
-                                reportName           : "Allure Report"
-                        ]
-                )
-            }
+                               publishHTML(
+                                       target: [
+                                               allowMissing         : false,
+                                               alwaysLinkToLastBuild: false,
+                                               keepAll              : true,
+                                               reportDir            : 'report/allure-results',
+                                               reportFiles          : 'index.html',
+                                               reportName           : "Allure Report"
+                                       ]
+                               )
+                           }
+               }
+
     }
 }
