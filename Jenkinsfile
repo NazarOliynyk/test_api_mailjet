@@ -61,12 +61,12 @@
 pipeline {
     agent any
     stages {
-           stage('requirements') {
-             steps {
-               echo 'Installing Bundler ....'
-               sh 'gem install bundler'
-             }
-           }
+//            stage('requirements') {
+//              steps {
+//                echo 'Installing Bundler ....'
+//                sh 'gem install bundler'
+//              }
+//            }
 
            stage('build') {
              steps {
