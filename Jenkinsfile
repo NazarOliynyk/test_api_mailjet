@@ -9,7 +9,7 @@ pipeline {
 //               bat "rake"
             }
         }
-        stage('build') {
+        stage('test') {
              steps {
               echo 'RUNNING tests'
                 bat "rake"
