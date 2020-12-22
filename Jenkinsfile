@@ -4,7 +4,7 @@ pipeline {
         stage('build') {
             steps {
              echo 'UPDATING bundle'
-             sh rake
+             sh "bundle exec cucumber features/"
 
             }
         }
