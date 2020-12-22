@@ -6,8 +6,14 @@ pipeline {
              echo 'UPDATING bundle'
               bat 'ruby --version'
               bat "bundle install"
-              bat "rake"
+//               bat "rake"
             }
+        }
+        stage('build') {
+             steps {
+              echo 'RUNNING tests'
+                bat "rake"
+             }
         }
     }
 }
