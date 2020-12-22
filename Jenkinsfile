@@ -4,7 +4,7 @@ pipeline {
         stage('build') {
             steps {
              echo 'UPDATING bundle'
-             sh "bundle exec cucumber features/"
+              sh 'ruby --version'
 
             }
         }
