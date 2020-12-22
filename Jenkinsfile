@@ -5,7 +5,8 @@ pipeline {
             steps {
              echo 'UPDATING bundle'
               bat 'ruby --version'
-
+              bat "bundle install"
+              bat "rake"
             }
         }
     }
