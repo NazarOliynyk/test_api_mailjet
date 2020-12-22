@@ -58,29 +58,40 @@
 //
 //  }
 
-pipeline {
-
-    agent any
-    stages {
-//            stage('requirements') {
+// pipeline {
+//
+//     agent any
+//     stages {
+// //            stage('requirements') {
+// //              steps {
+// //                echo 'Installing Bundler ....'
+// //                sh 'gem install bundler'
+// //              }
+// //            }
+//
+//            stage('build') {
 //              steps {
-//                echo 'Installing Bundler ....'
-//                sh 'gem install bundler'
+//                echo 'Building project ....'
+//                sh 'bundle install'
 //              }
 //            }
+//
+//            stage('test') {
+//              steps {
+//                echo 'Testing project ....'
+//                sh 'rake cucumber:mailjet_api'
+//              }
+//            }
+//     }
+// }
 
-           stage('build') {
-             steps {
-               echo 'Building project ....'
-               sh 'bundle install'
-             }
-           }
-
-           stage('test') {
-             steps {
-               echo 'Testing project ....'
-               sh 'rake cucumber:mailjet_api'
-             }
-           }
+pipeline {
+    agent { docker { image 'ruby' } }
+    stages {
+        stage('build') {
+            steps {
+                sh 'ruby --version'
+            }
+        }
     }
 }
