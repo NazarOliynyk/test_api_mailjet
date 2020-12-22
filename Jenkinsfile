@@ -15,22 +15,34 @@ pipeline {
                 bat "rake"
              }
         }
-        stage('Publish') {
-               steps{
-                echo 'PUBLISHING Allure report'
-                               publishHTML(
-                                       target: [
-                                               allowMissing         : false,
-                                               alwaysLinkToLastBuild: false,
-                                               keepAll              : true,
-                                               reportDir            : 'report/allure-report',
-                                               reportFiles          : 'index.html',
-                                               reportName           : "Allure Report",
-                                               results              : [[path: 'report/allure-results']]
-                                       ]
-                               )
-                           }
-               }
+//         stage('Publish') {
+//                steps{
+//                 echo 'PUBLISHING Allure report'
+//                                publishHTML(
+//                                        target: [
+//                                                allowMissing         : false,
+//                                                alwaysLinkToLastBuild: false,
+//                                                keepAll              : true,
+//                                                reportDir            : 'report/allure-report',
+//                                                reportFiles          : 'index.html',
+//                                                reportName           : "Allure Report",
+//                                                results              : [[path: 'report/allure-results']]
+//                                        ]
+//                                )
+//                            }
+//                }
 
     }
+
+    post {
+           always {
+               allure([
+                        includeProperties: false,
+                        jdk: 'JDK 8.144',
+                        properties: [],
+                        reportBuildPolicy: 'ALWAYS',
+                        results: [[path: 'report/allure-results']]
+                    ])
+           }
+       }
 }
