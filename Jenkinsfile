@@ -87,10 +87,12 @@
 
 pipeline {
     agent any
-       stage('build') {
-          steps {
-             echo 'Building project ....'
-             sh 'bundle install'
-          }
+    stages {
+                   stage('build') {
+                     steps {
+                       echo 'Building project ....'
+                       sh 'bundle install'
+                     }
+                   }
     }
 }
