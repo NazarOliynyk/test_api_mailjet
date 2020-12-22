@@ -3,8 +3,9 @@ pipeline {
     stages {
         stage('build') {
             steps {
+             echo 'UPDATING bundle'
                 sh "bundle install"
-                sh "rake cucumber:mailjet_api"
+//                 sh "rake cucumber:mailjet_api"
             }
         }
     }
