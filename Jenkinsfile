@@ -86,12 +86,11 @@
 // }
 
 pipeline {
-    agent { docker { image 'ruby' } }
-    stages {
-        stage('build') {
-            steps {
-                sh 'ruby --version'
-            }
-        }
+    agent any
+       stage('build') {
+          steps {
+             echo 'Building project ....'
+             sh 'bundle install'
+          }
     }
 }
