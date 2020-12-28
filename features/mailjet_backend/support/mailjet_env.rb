@@ -1,5 +1,5 @@
 require 'require_all'
-require 'JSON'
+# require 'JSON'
 require_all 'app'
 
 Before('@MailjetFeature') do

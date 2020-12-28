@@ -1,4 +1,4 @@
-require 'JSON'
+# require 'JSON'
 
 module JsonHandler
 

@@ -1,8 +1,5 @@
 require_all 'config'
 require_all 'lib'
-# require_relative  'C:\Z_RubyProjects\mail_handling\test_api_mailjet\lib\json_handler.rb'
-# require_relative  'C:\Z_RubyProjects\mail_handling\test_api_mailjet\config\config_manager.rb'
-# require_relative  'C:\Z_RubyProjects\mail_handling\test_api_mailjet\lib\rest_client\http_client.rb'
 
 require 'base64'
 
