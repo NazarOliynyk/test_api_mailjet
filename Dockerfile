@@ -22,8 +22,13 @@ RUN bundle install
 CMD rake
 
 #docker build -t rubymailjet1:mailjettag1 .
+#docker image ls
+
 #docker run  8ceef3282ea7
+#docker container ls
 
 #docker tag c4a1d77967bc nazarlw/mailjet_1:tag1
 #docker push nazarlw/mailjet_1:tag1
+
 #docker pull nazarlw/mailjet_1:tag1
+
